@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TercerasComparer | Tu asesor móvil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">TercerasComparer</div>
+        <nav>
+            <ul>
+                <li><a href="#marcas">Marcas</a></li>
+                <li><a href="#comparador">Comparador</a></li>
+                <li><a href="#asesoramiento">Asesoramiento</a></li>
+                <li><a href="#IA">Asistente Virtual</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Encuentra el smartphone perfecto para ti</h1>
+            <p>Análisis objetivo, pros, contras, comparativas y más.</p>
+        </section>
+
+        <!-- Sección del Comparador -->
+        <section id="comparador" class="comparator-section">
+            <h2>Comparar Dispositivos</h2>
+            <div class="comparator-controls">
+                <label for="device1">Dispositivo 1:</label>
+                <select id="device1">
+                    <option value="">Selecciona el dispositivo 1</option>
+                    <option value="iphone15">iPhone 15 Pro</option>
+                    <option value="s24ultra">Samsung S24 Ultra</option>
+                </select>
+                <span class="vs-badge">VS</span>
+                <label for="device2">Dispositivo 2:</label>
+                <select id="device2">
+                    <option value="">Selecciona el dispositivo 2</option>
+                    <option value="xiaomi14">Xiaomi 14 Pro</option>
+                    <option value="pocoF5">POCO F5</option>
+                </select>
+                <button id="btn-comparar">Comparar</button>
+            </div>
+
+            <div class="table-container">
+                <table id="tabla-comparativa">
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="hud-cursor-container">
+        
+    </div>
+
+    <script src="server.js"></script>
+</body>
+</html>
+</body>
+</html>
