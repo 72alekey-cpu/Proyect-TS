@@ -3,63 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TercerasComparer | Tu asesor móvil</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Terceras-Review | Elige tu próximo smartphone</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#005BEA',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="font-sans text-gray-900 bg-white antialiased flex flex-col min-h-screen">
 
-    <header>
-        <div class="logo">TercerasComparer</div>
-        <nav>
-            <ul>
-                <li><a href="#marcas">Marcas</a></li>
-                <li><a href="#comparador">Comparador</a></li>
-                <li><a href="#asesoramiento">Asesoramiento</a></li>
-                <li><a href="#IA">Asistente Virtual</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="flex items-center justify-between px-6 py-5 max-w-7xl mx-auto w-full bg-white">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.reload()">
+            <div class="bg-brand-600 text-white p-1.5 rounded-lg shadow-sm">
+                <i data-lucide="smartphone" class="w-5 h-5"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight">Terceras-Review</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
+            <a href="#comparativa" class="hover:text-brand-600 transition-colors">Comparativa</a>
+            <a href="#caracteristicas" class="hover:text-brand-600 transition-colors">Características</a>
+            <a href="login.html" class="hover:text-brand-600 transition-colors">Suscribirse</a>
+        </div>
+        
+        <div id="contenedorAuth">
+            <a href="login.html" class="font-bold text-sm text-gray-900 hover:text-brand-600 transition-colors cursor-pointer inline-block">
+                Suscribirse
+            </a>
+        </div>
+    </nav>
 
-    <main>
-        <section id="hero">
-            <h1>Encuentra el smartphone perfecto para ti</h1>
-            <p>Análisis objetivo, pros, contras, comparativas y más.</p>
+    <main class="flex-grow">
+        <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-xs font-bold mb-6 border border-brand-100">
+                    <div class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></div>
+                    Actualizado para 2026
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight text-gray-900">
+                    Elige tu próximo <span class="text-brand-600">smartphone</span> inteligente.
+                </h1>
+                <p class="text-gray-500 text-lg mb-10 leading-relaxed max-w-lg">
+                    Comparamos los dispositivos móviles más destacados del mercado. Análisis objetivo de características, ventajas y desventajas para que tomes la mejor decisión.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#comparativa" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-xl flex items-center gap-2 transition-all shadow-md shadow-brand-500/20">
+                        Ver comparativa <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative lg:ml-10">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Smartphone" class="rounded-[2rem] shadow-2xl w-full object-cover h-[400px] md:h-[500px] grayscale border border-gray-100">
+                <div class="absolute -bottom-6 -left-6 md:bottom-10 md:-left-12 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4 border border-gray-100 z-10">
+                    <div class="text-brand-600 font-extrabold text-xl bg-brand-50 px-3 py-2 rounded-xl">9.8</div>
+                    <div>
+                        <div class="font-bold text-sm text-gray-900">Mejor calificado</div>
+                        <div class="text-xs text-gray-500 font-medium">iPhone 15 Pro Max</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Sección del Comparador -->
-        <section id="comparador" class="comparator-section">
-            <h2>Comparar Dispositivos</h2>
-            <div class="comparator-controls">
-                <label for="device1">Dispositivo 1:</label>
-                <select id="device1">
-                    <option value="">Selecciona el dispositivo 1</option>
-                    <option value="iphone15">iPhone 15 Pro</option>
-                    <option value="s24ultra">Samsung S24 Ultra</option>
-                </select>
-                <span class="vs-badge">VS</span>
-                <label for="device2">Dispositivo 2:</label>
-                <select id="device2">
-                    <option value="">Selecciona el dispositivo 2</option>
-                    <option value="xiaomi14">Xiaomi 14 Pro</option>
-                    <option value="pocoF5">POCO F5</option>
-                </select>
-                <button id="btn-comparar">Comparar</button>
+        <section id="comparativa" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-100">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Comparativa de Gama Alta</h2>
+                <p class="text-gray-500 max-w-2xl text-base">Analizamos detalladamente las especificaciones, junto con los pros y contras técnicos de cada modelo.</p>
             </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="border border-gray-200 rounded-3xl overflow-hidden shadow-sm bg-white flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800&auto=format&fit=crop" alt="iPhone" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-extrabold px-3 py-1.5 rounded-full shadow-sm">9.8 / 10</div>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <div class="text-brand-600 text-xs font-bold mb-1 uppercase tracking-wider">Apple</div>
+                            <h3 class="text-2xl font-extrabold mb-4 text-gray-900">iPhone 15 Pro Max</h3>
+                            
+                            <div class="space-y-2 text-xs text-gray-600 border-b border-gray-100 pb-4 mb-4">
+                                <div class="flex justify-between"><span>Pantalla:</span> <span class="font-semibold text-gray-900">6.7" OLED, 120Hz</span></div>
+                                <div class="flex justify-between"><span>Procesador:</span> <span class="font-semibold text-gray-900">A17 Pro (3nm)</span></div>
+                                <div class="flex justify-between"><span>Batería:</span> <span class="font-semibold text-gray-900">4422 mAh</span></div>
+                            </div>
 
-            <div class="table-container">
-                <table id="tabla-comparativa">
-                </table>
+                            <div class="mb-4">
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Ventajas</h4>
+                                <ul class="space-y-1.5 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Estructura de titanio resistente y ligera.</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Zoom óptico de 5x de alta definición.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Desventajas</h4>
+                                <ul class="space-y-1.5 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i> Velocidad de carga limitada a 25W.</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i> Costo de reparación elevado de componentes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-3xl overflow-hidden shadow-sm bg-white flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-gray-100">
+                            <img src="https://thf.bing.com/th/id/OIP.43syDyCivYQ0l3mM0Ixz_QHaE8?w=295&h=196&c=7&r=0&o=7&cb=thfc1falcon&pid=1.7&rm=3" alt="Samsung" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-extrabold px-3 py-1.5 rounded-full shadow-sm">9.7 / 10</div>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <div class="text-brand-600 text-xs font-bold mb-1 uppercase tracking-wider">Samsung</div>
+                            <h3 class="text-2xl font-extrabold mb-4 text-gray-900">Galaxy S24 Ultra</h3>
+                            
+                            <div class="space-y-2 text-xs text-gray-600 border-b border-gray-100 pb-4 mb-4">
+                                <div class="flex justify-between"><span>Pantalla:</span> <span class="font-semibold text-gray-900">6.8" AMOLED, 120Hz</span></div>
+                                <div class="flex justify-between"><span>Procesador:</span> <span class="font-semibold text-gray-900">Snapdragon 8 Gen 3</span></div>
+                                <div class="flex justify-between"><span>Batería:</span> <span class="font-semibold text-gray-900">5000 mAh</span></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Ventajas</h4>
+                                <ul class="space-y-1.5 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Integración completa de S-Pen y funciones avanzadas de IA.</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Cristal Gorilla Armor con reducción drástica de reflejos.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Desventajas</h4>
+                                <ul class="space-y-1.5 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i> Dimensiones robustas y esquinas muy anguladas.</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i> No incluye adaptador de corriente en la caja.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-3xl overflow-hidden shadow-sm bg-white flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-gray-100">
+                            <img src="data:image/webp;base64,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" alt="Google Pixel" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-extrabold px-3 py-1.5 rounded-full shadow-sm">9.2 / 10</div>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <div class="text-brand-600 text-xs font-bold mb-1 uppercase tracking-wider">Google</div>
+                            <h3 class="text-2xl font-extrabold mb-4 text-gray-900">Pixel 8 Pro</h3>
+                            
+                            <div class="space-y-2 text-xs text-gray-600 border-b border-gray-100 pb-4 mb-4">
+                                <div class="flex justify-between"><span>Pantalla:</span> <span class="font-semibold text-gray-900">6.7" LTPO OLED, 120Hz</span></div>
+                                <div class="flex justify-between"><span>Procesador:</span> <span class="font-semibold text-gray-900">Tensor G3 (4nm)</span></div>
+                                <div class="flex justify-between"><span>Batería:</span> <span class="font-semibold text-gray-900">5050 mAh</span></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Ventajas</h4>
+                                <ul class="space-y-1.5 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Procesamiento fotográfico de vanguardia con IA nativa.</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Soporte extendido excepcional de 7 años de actualizaciones.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Desventajas</h4>
+                                <ul class="space-y-1.5 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i> Menor potencia gráfica bruta en procesamiento de juegos.</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i> Velocidad de carga lenta comparado con la competencia.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="bg-gray-50/50 py-20 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">¿Qué evaluamos en cada dispositivo?</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto text-lg">Nuestro análisis se basa en pilares fundamentales que definen la experiencia real del usuario.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm">
+                        <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="cpu" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-900">Rendimiento y Procesador</h3>
+                        <p class="text-gray-500 text-base leading-relaxed">Evaluamos la velocidad de respuesta en entornos multitarea complejos.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm">
+                        <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="camera" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-900">Sistema de Cámaras</h3>
+                        <p class="text-gray-500 text-base leading-relaxed">Análisis minucioso del rango dinámico y la estabilización óptica de video.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm">
+                        <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="battery-charging" class="w-7 h-7"></i></div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-900">Autonomía de Batería</h3>
+                        <p class="text-gray-500 text-base leading-relaxed">Pruebas cíclicas de descarga para garantizar fiabilidad durante todo el día.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <div id="hud-cursor-container">
-        
-    </div>
+    <footer class="bg-white border-t border-gray-200 w-full">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="bg-brand-600 text-white p-1 rounded-md"><i data-lucide="smartphone" class="w-4 h-4"></i></div>
+                    <span class="font-bold text-lg tracking-tight">TechReview</span>
+                </div>
+                <p class="text-xs text-gray-400">Análisis y comparativas objetivas de tecnología móvil para la comunidad estudiantil.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Contenido</h3>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Artículos técnicos</a></li>
+                    <li><a href="#comparativa" class="hover:text-brand-600 transition-colors">Comparativas de hardware</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Guías de compra de smartphones</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Nosotros</h3>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Quiénes somos</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Equipo de desarrollo técnico</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Legal</h3>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Política de privacidad de datos</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Términos de servicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 py-6 border-t border-gray-100 text-center md:text-left">
+            <span class="text-xs text-gray-400">&copy; 2026 TechReview. Todos los derechos reservados.</span>
+        </div>
+    </footer>
 
-    <script src="server.js"></script>
-</body>
-</html>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const estaLogueado = localStorage.getItem('usuarioLogueado');
+            
+            if (estaLogueado === 'true') {
+                const contenedorAuth = document.getElementById('contenedorAuth');
+                if (contenedorAuth) {
+                    contenedorAuth.innerHTML = `
+                        <button onclick="cerrarSesion()" class="font-bold text-sm text-rose-600 hover:text-rose-700 transition-colors flex items-center gap-1">
+                            <i data-lucide="log-out" class="w-4 h-4"></i> Cerrar sesión
+                        </button>
+                    `;
+                    if (window.lucide) {
+                        lucide.createIcons();
+                    }
+                }
+            }
+        });
+
+        function cerrarSesion() {
+            localStorage.removeItem('usuarioLogueado');
+            window.location.reload();
+        }
+
+        lucide.createIcons();
+    </script>
 </body>
 </html>
